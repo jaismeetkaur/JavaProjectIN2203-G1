@@ -1,55 +1,87 @@
 import java.util.*;
 
-
 public class TheJungle{
 
-public static void main(String [] args){
-System.out.println("starting application");
+	/*
 
+	What remains to be done:
+	Using the started code provided in google classroom,
+	extend the code with following functionalities:
+	1. you nowhave 2 arrays each containing 10 lion objects and 10 tiger objects
+	2. create some logic classor object anything to compare the strength of each of the 10 lions
+	and tigers stored in the Arrays: output whether LIONS or Tigers are the Winners! in 
+	terms of who is stronger
+
+	*/
+	
+	public static void main(String [] args){
+		System.out.println("starting application");
+		TheCompetition c = new TheCompetition();
+		c.Run();
+		c.Test();
+
+	}
 
 }
-
-
-}
-
-
 
 
 class TheCompetition{
-// TheCompetition class will be the main organizer Boss Program to run all the work
-// This will be the Supervisor Program
+	// TheCompetition class will be the main organizer Boss Program to run all the work
+	// This will be the Supervisor Program
+	Lion [] lions;
+	Tiger [] tigers;
 
 
-public void Run(){
-// from here I will call all the other methods that are making the Algorithm to execute
-// start by generating 10 Lions and 10 Tigers
+	public void Run(){
+		// from here I will call all the other methods that are making the Algorithm to execute
+		// start by generating 10 Lions and 10 Tigers
+		lions = new Lion[10];
+		tigers = new Tiger[10];
+
+		for(int i= 0; i<10; i++){
+			lions[i] = new Lion();
+			tigers[i] = new Tiger();
+		}
+
+	}
+
+	public void Test(){
+		int a, b;
+		for (int i=0; i<10; i++){
+			a = (lions[i]).catStrength;
+			b = (tigers[i]).catStrength;
+			System.out.print(a);
+			System.out.print(" ");
+			System.out.println(b);
+		}
+	}
+
 }
-
-
-}
-
-
 
 
 class Feline{
-String catName;
-int catStrength;
-public Feline(){
-Random rnumber = new Random();
-catStrength = rnumber.nextInt(100);
-}
-}
+	String catName;
+	int catStrength;
 
+	public Feline(){
+		Random rnumber = new Random();
+		catStrength = rnumber.nextInt(100);
+	}
+
+	
+}
 
 class Lion extends Feline{
-public Lion(){
-super();
-}
-}
+	public Lion(){
+		super();
+	}
 
+
+}
 
 class Tiger extends Feline{
-public Tiger(){
-super();
-}
+	public Tiger(){
+	super();	
+	}
+
 }
